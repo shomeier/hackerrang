@@ -18,19 +18,15 @@ public class Solution {
          */
         public static int countingValleys(int steps, String path) {
 
-            final List<String> stepList = path.codePoints()
-                .mapToObj(c -> String.valueOf((char) c))
-                .collect(toList());
-
             int level = 0, numberOfValleys = 0;
-            boolean currentlyInValley = false;
-            for (String step : stepList) {
-                if (level == 0) {
-                    currentlyInValley = step.equals("D");
-                }
-                level = (step.equals("D")) ? (level - 1) : (level + 1);
-                if (level == 0 && currentlyInValley) {
-                    numberOfValleys++;
+            for (int i = 0; i < path.length(); i++) {
+                if (path.charAt(i) == 'D') {
+                    if (level == 0) {
+                        numberOfValleys++;
+                    }
+                    level--;
+                } else {
+                    level++;
                 }
             }
 
