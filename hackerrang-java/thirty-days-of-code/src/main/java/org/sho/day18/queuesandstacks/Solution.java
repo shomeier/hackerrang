@@ -23,9 +23,9 @@ public class Solution {
 
     private final String input;
 
-    private final Stack<Character> stack = new Stack();
+    private final Stack<Character> stack = new Stack<>();
     // LinkedList implements Queue interface
-    private final Queue<Character> queue = new LinkedList();
+    private final Queue<Character> queue = new LinkedList<>();
 
     Solution(String input) {
         this.input = input;
