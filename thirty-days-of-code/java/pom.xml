@@ -8,10 +8,17 @@
         <groupId>org.sho.hackerrank</groupId>
         <artifactId>root</artifactId>
         <version>${revision}</version>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>thirty-days-of-code</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>${revision}</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>15</maven.compiler.source>
+        <maven.compiler.target>15</maven.compiler.target>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -25,4 +32,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

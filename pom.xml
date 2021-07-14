@@ -17,8 +17,8 @@
     </properties>
 
     <modules>
-        <module>thirty-days-of-code</module>
-        <module>interview-preparation-kit</module>
+        <module>thirty-days-of-code/java</module>
+        <module>interview-preparation-kit/warm-up-challenges/java</module>
     </modules>
 
     <dependencyManagement>
@@ -63,7 +63,8 @@
     </dependencyManagement>
 
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+        <pluginManagement>
+            <!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
                 <plugin>
