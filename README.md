@@ -1,2 +1,2 @@
-# hackerrang
+# hackerrank
 Sparring area for HackerRank
