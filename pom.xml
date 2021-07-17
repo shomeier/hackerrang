@@ -17,6 +17,7 @@
     </properties>
 
     <modules>
+        <module>datastructures/java</module>
         <module>thirty-days-of-code/java</module>
         <module>interview-preparation-kit/warm-up-challenges/java</module>
     </modules>
