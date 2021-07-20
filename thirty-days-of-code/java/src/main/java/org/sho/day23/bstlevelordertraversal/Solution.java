@@ -1,7 +1,10 @@
+// https://www.hackerrank.com/challenges/30-binary-trees/problem
 package org.sho.day23.bstlevelordertraversal;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -18,19 +21,31 @@ class Node {
 
 class Solution {
 
+    private static Queue<Node> queue = new LinkedList<>();
 
     static void levelOrder(Node root) {
-        // Write your code here
-        String levelOrder = getLevelOrder(root).stream()
+        List<Integer> order = new ArrayList<>();
+        getLevelOrder(root, order);
+        String levelOrder = order.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining(" "));
         System.out.println(levelOrder);
     }
 
-    static List<Integer> getLevelOrder(Node root) {
+    static void getLevelOrder(Node root, List<Integer> order) {
 
+        order.add(root.data);
 
-        return Collections.emptyList();
+        if (root.left != null) {
+            queue.add(root.left);
+        }
+        if (root.right != null) {
+            queue.add(root.right);
+        }
+
+        if (!queue.isEmpty()) {
+            getLevelOrder(queue.remove(), order);
+        }
     }
 
     public static Node insert(Node root, int data) {
