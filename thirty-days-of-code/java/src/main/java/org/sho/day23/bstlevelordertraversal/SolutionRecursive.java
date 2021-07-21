@@ -19,52 +19,21 @@ class Node {
 }
 
 
-class Solution {
+class SolutionRecursive {
 
     private static Queue<Node> queue = new LinkedList<>();
 
-    static void levelOrder(Node root) {
-        String levelOrder = getLevelOrder(root).stream()
-                .map(String::valueOf)
-                .collect(Collectors.joining(" "));
-        System.out.println(levelOrder);
-    }
-
-    static List<Integer> getLevelOrder(Node root) {
-
-        List<Integer> retVal = new ArrayList<>();
-        Queue<Node> queue = new LinkedList<>();
-
-        if (root != null) {
-            queue.add(root);
-
-            while (!queue.isEmpty()) {
-                Node node = queue.remove();
-                retVal.add(node.data);
-
-                if (node.left != null) {
-                    queue.add(node.left);
-                }
-                if (node.right != null) {
-                    queue.add(node.right);
-                }
-            }
-        }
-
-        return retVal;
-    }
-
     // recursive solution, not very elegant
-    static void levelOrderRecursive(Node root) {
+    static void levelOrder(Node root) {
         List<Integer> order = new ArrayList<>();
-        getLevelOrderRecursive(root, order);
+        getLevelOrder(root, order);
         String levelOrder = order.stream()
                 .map(String::valueOf)
                 .collect(Collectors.joining(" "));
         System.out.println(levelOrder);
     }
 
-    static void getLevelOrderRecursive(Node root, List<Integer> order) {
+    static void getLevelOrder(Node root, List<Integer> order) {
 
         order.add(root.data);
 
@@ -76,7 +45,7 @@ class Solution {
         }
 
         if (!queue.isEmpty()) {
-            getLevelOrderRecursive(queue.remove(), order);
+            getLevelOrder(queue.remove(), order);
         }
     }
 
