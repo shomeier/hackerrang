@@ -12,7 +12,7 @@ class SolutionTest extends AbstractSolutionTest {
     @ParameterizedTest
     @MethodSource("provideData")
     void testOne(List<Integer> expected, List<Integer> input) {
-        assertEquals(expected, Solution.getLevelOrder(buildBst(input)));
+        assertEquals(expected, Solution.getLevelOrder(createBst(input)));
     }
 
     private static Stream<Arguments> provideData() {

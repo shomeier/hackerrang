@@ -4,10 +4,10 @@ import java.util.List;
 
 public abstract class AbstractSolutionTest {
 
-    protected Node buildBst(List<Integer> data) {
+    protected Node createBst(List<Integer> data) {
         return data.stream()
-                .reduce(null, (r, e) -> Solution.insert((Node) r, e.intValue()), (r, s) -> {
-                    throw new RuntimeException("Combining in parfallel streams not supported!");
+                .reduce(null, Solution::insert, (u, t) -> {
+                    throw new RuntimeException("No combiner for parallel streams provided");
                 });
     }
 }
