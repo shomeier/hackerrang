@@ -8,16 +8,6 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-class Node {
-    Node left, right;
-    int data;
-
-    Node(int data) {
-        this.data = data;
-        left = right = null;
-    }
-}
-
 
 class SolutionRecursive {
 
