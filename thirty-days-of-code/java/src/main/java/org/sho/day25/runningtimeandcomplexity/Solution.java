@@ -2,6 +2,7 @@
 package org.sho.day25.runningtimeandcomplexity;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class Solution {
 
@@ -20,7 +21,11 @@ public class Solution {
         }
     }
 
-    static boolean isPrime(int x) {
+    static boolean isPrime(int n) {
+        return n > 1 && IntStream.rangeClosed(2, (int) Math.sqrt(n)).noneMatch(divisor -> n % divisor == 0);
+    }
+
+    static boolean isPrimeNonLambdas(int x) {
         if (x == 1) {
             return false;
         }
