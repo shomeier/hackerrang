@@ -1,4 +1,4 @@
-def getNamesForSecondLowestGrades(grades):
+def get_names(grades):
     first = second = 99999
     for grade in grades:
         if grade[1] < first:
@@ -15,6 +15,6 @@ if __name__ == '__main__':
         score = float(input())
         grades.append([name, score])
 
-    names = getNamesForSecondLowestGrades(grades)
+    names = get_names(grades)
     for name in names:
         print(name)
