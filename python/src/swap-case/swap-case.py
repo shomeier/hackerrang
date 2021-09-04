@@ -1,15 +1,20 @@
 # https://www.hackerrank.com/challenges/swap-case/problem
+
 def swap_case(s):
-    retVal = ""
+    ret_val = ""
     for char in s:
         if char.isupper():
-            retVal = retVal + char.lower()
+            ret_val = ret_val + char.lower()
         else:
-            retVal = retVal + char.upper()
-    return retVal
+            ret_val = ret_val + char.upper()
+    return ret_val
+
+
+def swap_case_better(s):
+    return s.swapcase()
 
 
 if __name__ == '__main__':
     s = input()
-    result = swap_case(s)
+    result = swap_case_better(s)
     print(result)
