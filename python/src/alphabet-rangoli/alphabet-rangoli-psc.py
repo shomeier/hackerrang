@@ -1,3 +1,6 @@
+# problem setters code
+# https: // www.hackerrank.com/challenges/alphabet-rangoli/editorial
+
 def print_rangoli(n):
     for i in range(n):
         s = "-".join(chr(ord('a')+n-j-1) for j in range(i+1))
