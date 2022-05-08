@@ -21,9 +21,9 @@ if __name__ == '__main__':
     common_a = set(a) & elem_occurences.keys()
     if (common_a):
         for i in common_a:
-            happiness = happiness + elem_occurences[i]
+            happiness+=elem_occurences[i]
     common_b = set(b) & elem_occurences.keys()
     if (common_b):
         for i in common_b:
-            happiness = happiness - elem_occurences[i]
+            happiness-=elem_occurences[i]
     print(happiness)
